@@ -67,9 +67,16 @@ def display_pdf(file_data, file_name):
 
 def send_email(name, user_email, subject, message):
     try:
-        # Get email credentials from secrets
-        sender_email = st.secrets["email"]["address"]
-        password = st.secrets["email"]["password"]
+        # Get email credentials from Render's Environment Variables
+        # We use os.environ.get() to read them
+        sender_email = os.environ.get("SENDER_EMAIL")
+        password = os.environ.get("SENDER_PASSWORD")
+        
+        # Check if the secrets are loaded
+        if not sender_email or not password:
+            st.error("Email credentials are not set on the server. Please contact the admin.")
+            return False
+            
         receiver_email = "anatepapilo@gmail.com" # This is your email
 
         # Create the full email message
@@ -656,4 +663,5 @@ elif page_selection == "💬 Contact":
             **📍 Location:**
             Dubai, UAE | Lagos, Nigeria
             """
+
         )
