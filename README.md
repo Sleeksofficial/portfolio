@@ -1,11 +1,10 @@
 # Oloruntoba Anate's Interactive Portfolio
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://YOUR_RENDER_URL.onrender.com)
-
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://oloruntoba-portfolio.onrender.com)
 ## 🚀 Live Demo
 
 **View the live, deployed application here:**
-[https://YOUR_RENDER_URL.onrender.com](https://YOUR_RENDER_URL.onrender.com)
+[https://YOUR_RENDER_URL.onrender.com](https://oloruntoba-portfolio.onrender.com/)
 
 ---
 
