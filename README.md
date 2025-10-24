@@ -13,8 +13,7 @@
 
 (I highly recommend you take a screenshot of your dashboard and drag it into this file here. A visual makes a huge difference!)
 
-![Project Showcase Screenshot](<img width="955" height="388" alt="Screenshot 2025-10-24 025530" src="https://github.com/user-attachments/assets/1dc5ebcd-c395-4b34-9abe-6d8fadcb5b70" />
-)
+[Project Showcase Screenshot](<img width="955" height="388" alt="Screenshot 2025-10-24 025530" src="https://github.com/user-attachments/assets/1dc5ebcd-c395-4b34-9abe-6d8fadcb5b70" />)
 
 ---
 
