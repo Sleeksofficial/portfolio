@@ -151,7 +151,7 @@ with st.container():
     col_img, col_header = st.columns([1, 4])
     with col_img:
         if profile_image:
-            st.image(profile_image, width=160, caption="Oloruntoba Peter Anate") 
+            st.image(profile_image, width=140, caption="Oloruntoba Peter Anate") 
     with col_header:
         st.title("Oloruntoba Peter Anate")
         st.subheader("ICT Project Manager | Business & Financial Analyst | Auditor")
