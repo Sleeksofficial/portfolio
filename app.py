@@ -68,18 +68,15 @@ def display_pdf(file_data, file_name):
 def send_email(name, user_email, subject, message):
     try:
         # Get email credentials from Render's Environment Variables
-        # We use os.environ.get() to read them
         sender_email = os.environ.get("SENDER_EMAIL")
         password = os.environ.get("SENDER_PASSWORD")
         
-        # Check if the secrets are loaded
         if not sender_email or not password:
             st.error("Email credentials are not set on the server. Please contact the admin.")
             return False
             
-        receiver_email = "anatepapilo@gmail.com" # This is your email
+        receiver_email = "anatepapilo@gmail.com" 
 
-        # Create the full email message
         full_message = f"""\
 Subject: New Portfolio Contact: {subject}
 
@@ -88,19 +85,27 @@ Reply-To: {user_email}
 
 {message}
 """
-        # Set up the secure SSL context
         context = ssl.create_default_context()
         
-        # Connect to Gmail's SMTP server
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+        # --- NEW: Connect to port 587 using standard SMTP ---
+        with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as server:
+            server.set_debuglevel(1) 
+            server.starttls(context=context) # <-- Upgrade to a secure connection
             server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email, full_message)
         
         return True # Email sent successfully
     
+    except smtplib.SMTPAuthenticationError:
+        st.error("Authentication failed. Please check the server credentials.")
+        return False
+    except smtplib.SMTPServerDisconnected:
+        st.error("Server disconnected. Please try again later.")
+        return False
     except Exception as e:
-        st.error(f"Error sending email: {e}")
-        return False # Email failed to send
+        # This will catch timeouts and other errors
+        st.error(f"An error occurred: {e}")
+        return False
 @st.cache_data
 def get_demo_data():
     np.random.seed(42)
@@ -665,3 +670,4 @@ elif page_selection == "💬 Contact":
             """
 
         )
+
