@@ -4,15 +4,15 @@
 ## 🚀 Live Demo
 
 **View the live, deployed application here:**
-[(https://oloruntoba-portfolio.onrender.com/)]
+https://oloruntoba-portfolio.onrender.com/
 ---
 
 ## 📸 Project Showcase
 
 (I highly recommend you take a screenshot of your dashboard and drag it into this file here. A visual makes a huge difference!)
 
-![(<img width="955" height="388" alt="Screenshot 2025-10-24 025530" src="https://github.com/user-attachments/assets/1dc5ebcd-c395-4b34-9abe-6d8fadcb5b70" />
-)]
+<img width="955" height="388" alt="Screenshot 2025-10-24 025530" src="https://github.com/user-attachments/assets/1dc5ebcd-c395-4b34-9abe-6d8fadcb5b70" />
+
 
 ---
 
